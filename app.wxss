@@ -2,31 +2,13 @@
 
 .searchbar-result {
   margin-top: 0;
-  font-size: 14px;
+  font-size: 28rpx;
 }
 
 .searchbar-result::before {
   display: none;
 }
 
-.weui-cell {
-  padding: 12px 15px 12px 35px;
-}
-
 page {
   background-color: #f0f0f0;
 }
-
-/*
-
-other config backup
-
-,
-      {
-        "pagePath": "pages/contact/contact",
-        "text": "联系我们",
-        "iconPath": "assets/contact.png",
-        "selectedIconPath": "assets/contact-active.png"
-      }
-      
- */

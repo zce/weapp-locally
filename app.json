@@ -5,13 +5,12 @@
     "pages/detail/detail",
     "pages/messages/messages",
     "pages/profile/profile",
-    "pages/contact/contact",
     "pages/settings/settings"
   ],
   "window": {
     "navigationBarBackgroundColor": "#3a4861",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "本地掌中宝",
+    "navigationBarTitleText": "本地宝",
     "backgroundColor": "#bcc0c9",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false,

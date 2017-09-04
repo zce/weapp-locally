@@ -1,1 +1,7 @@
-/* pages/detail/detail.wxss */
+text {
+  display: block;
+  margin: 200rpx 0;
+  font-size: 300rpx;
+  text-align: center;
+  color: #3a4861;
+}

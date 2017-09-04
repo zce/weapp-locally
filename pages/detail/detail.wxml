@@ -1,2 +1,1 @@
-<!--pages/detail/detail.wxml-->
-<text>{{page}}.wxml</text>
+<text>{{item.id}}</text>

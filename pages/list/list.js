@@ -21,6 +21,7 @@ Page({
 
     for (let i = start; i < stop; i++) {
       list.push({
+        id: i,
         title: '首个美人鱼节开启' + i,
         image: 'http://imgbdb2.bendibao.com/szbdb/20178/31/2017831234922_49973.gif',
         locale: '深圳蛇口海湾路8号价值工厂（iFactory）',

@@ -1,5 +1,5 @@
 <view class="messages">
-  <view class="item" wx:for="{{messages}}" wx:key="{{index}}">
+  <view class="item" wx:for="{{messages}}" wx:key="id">
     <navigator>
       <text class="title">{{item.title}}</text>
     </navigator>

@@ -1,7 +1,7 @@
 <include src="/includes/search-bar.wxml"/>
 
 <view class="cells">
-  <navigator class="item" wx:for="{{list}}" wx:key="{{index}}">
+  <navigator class="item" wx:for="{{list}}" wx:key="id" url="/pages/detail/detail?item={{item.id}}">
     <image src="{{item.image}}"/>
     <view class="meta">
       <text class="title">{{item.title}}</text>
