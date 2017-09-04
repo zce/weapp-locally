@@ -1,0 +1,2 @@
+<!--pages/settings/settings.wxml-->
+<text>{{page}}.wxml</text>

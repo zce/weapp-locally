@@ -1,0 +1,16 @@
+<include src="/includes/search-bar.wxml"/>
+
+<view class="cells">
+  <navigator class="item" wx:for="{{list}}" wx:key="{{index}}">
+    <image src="{{item.image}}"/>
+    <view class="meta">
+      <text class="title">{{item.title}}</text>
+      <text class="locale">{{item.locale}}</text>
+      <text class="price">门票： {{item.price}}</text>
+    </view>
+    <view class="score">{{item.score}}</view>
+  </navigator>
+</view>
+
+<view wx:if="{{hasMore}}" class="loadmore loading">正在加载...</view>
+<view wx:else class="loadmore">没有更多内容了</view>
