@@ -17,7 +17,6 @@ Page({
     let { pageIndex, pageSize, searchText } = this.data
     const params = { _page: ++pageIndex, _limit: pageSize }
     if (searchText) params.q = searchText
-    console.log(params)
 
     fetch(`/categories/${this.data.category.id}/shops`, params)
       .then(res => {

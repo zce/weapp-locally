@@ -1,1 +1,37 @@
-<text>{{item.id}}</text>
+<swiper class="slides" indicator-dots="{{shop.images.length > 1}}" indicator-color="#bcc0c9" indicator-active-color="#3a4861">
+  <swiper-item wx:for="{{shop.images}}" wx:key="id">
+    <image src="{{item}}" mode="aspectFill"/>
+  </swiper-item>
+</swiper>
+
+<view class="heading">
+  <text class="name">{{shop.name}}</text>
+  <text class="phone">电话：{{shop.phone || 'none'}}</text>
+  <text class="address">地址：{{shop.address}}</text>
+  <text class="hours">营业时间：{{shop.businessHours}}</text>
+  <view class="score" wx:if="{{item.score}}">{{item.score}}</view>
+</view>
+
+<view class="content">
+  <text>{{shop.introduction}}</text>
+</view>
+
+<view class="comments">
+  <view class="item" wx:for="{{shop.comments}}">
+    <text class="name">{{item.name}}</text>
+    <text class="date">{{item.date}}</text>
+    <text class="content">{{item.content}}</text>
+    <text class="rating">{{item.rating}}</text>
+    <view class="images">
+      <image wx:for="{{item.images}}" src="{{utils.size(item)}}"/>
+    </view>
+  </view>
+</view>
+
+<wxs module="utils">
+  module.exports = {
+    size: function (input) {
+      return input.replace('w.h', '100.100')
+    }
+  }
+</wxs>
