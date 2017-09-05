@@ -5,79 +5,48 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentPage: 1,
-    hasMore: true,
-    list: []
+    category: null,
+    shops: [],
+    pageIndex: 0,
+    pageSize: 20,
+    totalCount: 0,
+    hasMore: true
   },
 
   loadMore (callback) {
-    const start = (this.data.currentPage - 1) * 30
-    const stop = start + 30
+    let { pageIndex, pageSize, searchText } = this.data
+    const params = { _page: ++pageIndex, _limit: pageSize }
+    if (searchText) params.q = searchText
+    console.log(params)
 
-    if (start > 100) {
-      // no more
-      return this.setData({ hasMore: false })
-    }
-
-    const list = start ? this.data.list : []
-
-    for (let i = start; i < stop; i++) {
-      list.push({
-        id: i,
-        title: '首个美人鱼节开启' + i,
-        image: 'http://imgbdb2.bendibao.com/szbdb/20178/31/2017831234922_49973.gif',
-        locale: '深圳蛇口海湾路8号价值工厂（iFactory）',
-        price: '免费',
-        score: '4.9'
+    fetch(`/categories/${this.data.category.id}/shops`, params)
+      .then(res => {
+        const totalCount = parseInt(res.header['X-Total-Count'])
+        const hasMore = this.data.pageIndex * this.data.pageSize < totalCount
+        const shops = this.data.shops.concat(res.data)
+        this.setData({ shops, totalCount, pageIndex, hasMore })
+        typeof callback === 'function' && callback()
       })
-    }
-
-    setTimeout(() => {
-      this.setData({ list, currentPage: this.data.currentPage + 1 })
-      typeof callback === 'function' && callback()
-    }, Math.random() * 2000)
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad (options) {
-    this.loadMore()
-  },
+    fetch(`/categories/${options.cat}`)
+      .then(res => {
+        this.setData({ category: res.data })
+        wx.setNavigationBarTitle({ title: res.data.name })
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload () {
-
+        this.loadMore()
+      })
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh () {
-    this.setData({ hasMore: true, currentPage: 1 })
+    this.setData({ shops: [], pageIndex: 0, hasMore: true })
     this.loadMore(() => wx.stopPullDownRefresh())
   },
 
@@ -88,22 +57,22 @@ Page({
     this.loadMore()
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage () {
+  searchHandle () {
+    // console.log(this.data.searchText)
+    this.setData({ shops: [], pageIndex: 0, hasMore: true })
+    this.loadMore()
+  },
 
+  showSearchHandle () {
+    this.setData({ searchShowed: true })
   },
-  showInput () {
-    this.setData({ inputShowed: true })
+  hideSearchHandle () {
+    this.setData({ searchText: '', searchShowed: false })
   },
-  hideInput () {
-    this.setData({ inputVal: '', inputShowed: false })
+  clearSearchHandle () {
+    this.setData({ searchText: '' })
   },
-  clearInput () {
-    this.setData({ inputVal: '' })
-  },
-  inputTyping (e) {
-    this.setData({ inputVal: e.detail.value })
+  searchChangeHandle (e) {
+    this.setData({ searchText: e.detail.value })
   }
 })

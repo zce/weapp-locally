@@ -1,5 +1,5 @@
 App({
   config: {
-    apiBase: 'http://localhost:16688'
+    apiBase: 'https://locally.uieee.com'
   }
 })

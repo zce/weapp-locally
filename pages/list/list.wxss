@@ -4,6 +4,7 @@
 
 .cells .item {
   display: flex;
+  align-items: flex-start;
   border-bottom: 1rpx solid #eee;
 }
 
@@ -21,31 +22,37 @@
   font-size: 30rpx;
 }
 
-.cells .item .meta .locale {
-  color: #888;
-  font-size: 26rpx;
+.cells .item .meta .name {
+  color: #234;
+  font-size: 28rpx;
 }
 
-.cells .item .meta .price {
-  color: #ff69b4;
-  font-size: 26rpx;
+.cells .item .meta .phone,
+.cells .item .meta .address {
+  color: #678;
+  font-size: 24rpx;
+}
+
+.cells .item .meta .hours {
+  /*color: #ff69b4;*/
+  color: #456;
+  font-size: 22rpx;
 }
 
 .cells .item .score {
-  height: 50rpx;
-  margin: 20rpx 10rpx;
+  margin: 20rpx 20rpx 0 -40rpx;
   padding: 0 10rpx;
-  background-color: #ff3b30;
-  border-radius: 20rpx;
+  background-color: #ee523d;
+  border-radius: 30rpx;
   color: #fff;
   font-size: 24rpx;
-  line-height: 50rpx;
+  text-align: center;
 }
 
 .loadmore {
   color: #888;
   font-size: 30rpx;
-  line-height: 140rpx;
+  line-height: 100rpx;
   text-align: center;
 }
 
