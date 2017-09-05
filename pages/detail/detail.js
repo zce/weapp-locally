@@ -14,5 +14,12 @@ Page({
   onLoad (options) {
     fetch(`/shops/${options.item}`)
       .then(res => this.setData({ shop: res.data }))
+  },
+
+  previewHandle (e) {
+    wx.previewImage({
+      current: e.target.dataset.src,
+      urls: this.data.shop.images
+    })
   }
 })
