@@ -10,7 +10,7 @@
   "window": {
     "navigationBarBackgroundColor": "#3a4861",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "本地宝",
+    "navigationBarTitleText": "本地生活",
     "backgroundColor": "#bcc0c9",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false,

@@ -13,18 +13,17 @@ Page({
     hasMore: true
   },
 
-  loadMore (callback) {
+  loadMore () {
     let { pageIndex, pageSize, searchText } = this.data
     const params = { _page: ++pageIndex, _limit: pageSize }
     if (searchText) params.q = searchText
 
-    fetch(`/categories/${this.data.category.id}/shops`, params)
+    return fetch(`/categories/${this.data.category.id}/shops`, params)
       .then(res => {
         const totalCount = parseInt(res.header['X-Total-Count'])
         const hasMore = this.data.pageIndex * this.data.pageSize < totalCount
         const shops = this.data.shops.concat(res.data)
         this.setData({ shops, totalCount, pageIndex, hasMore })
-        typeof callback === 'function' && callback()
       })
   },
 
@@ -46,13 +45,14 @@ Page({
    */
   onPullDownRefresh () {
     this.setData({ shops: [], pageIndex: 0, hasMore: true })
-    this.loadMore(() => wx.stopPullDownRefresh())
+    this.loadMore().then(() => wx.stopPullDownRefresh())
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom () {
+    // TODO：节流
     this.loadMore()
   },
 
