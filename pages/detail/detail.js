@@ -13,7 +13,10 @@ Page({
    */
   onLoad (options) {
     fetch(`/shops/${options.item}`)
-      .then(res => this.setData({ shop: res.data }))
+      .then(res => {
+        this.setData({ shop: res.data })
+        wx.setNavigationBarTitle({ title: res.data.name })
+      })
   },
 
   previewHandle (e) {

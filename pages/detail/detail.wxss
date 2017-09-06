@@ -33,10 +33,21 @@
   text-align: center;
 }
 
+.introduction {
+  margin-top: 20rpx;
+  padding: 30rpx;
+  background-color: #fff;
+  color: #456;
+  font-size: 24rpx;
+  line-height: 2;
+}
+
 .comments {
   margin-top: 20rpx;
   padding: 20rpx;
   background-color: #fff;
+  color: #345;
+  font-size: 24rpx;
 }
 
 .comments .item {
@@ -45,8 +56,6 @@
   flex-direction: column;
   padding: 20rpx;
   border-bottom: 1rpx solid #eee;
-  color: #345;
-  font-size: 24rpx;
 }
 
 .comments .item .name {
@@ -55,18 +64,20 @@
 }
 
 .comments .item .date {
+  align-self: flex-end;
+  margin: -40rpx 0 20rpx;
   color: #567;
 }
 
 .comments .item .rating {
   position: absolute;
   top: 20rpx;
-  right: 0;
+  right: 10rpx;
   color: #ee523d;
 }
 
 .comments .item image {
-  width: 100rpx;
-  height: 100rpx;
+  width: 110rpx;
+  height: 110rpx;
   margin: 10rpx;
 }

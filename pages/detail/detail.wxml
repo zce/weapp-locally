@@ -4,7 +4,7 @@
   </swiper-item>
 </swiper>
 
-<view class="heading">
+<view class="heading" wx:if="{{shop.name}}">
   <text class="name">{{shop.name}}</text>
   <text class="phone">电话：{{shop.phone || 'none'}}</text>
   <text class="address">地址：{{shop.address}}</text>
@@ -12,16 +12,16 @@
   <view class="score" wx:if="{{item.score}}">{{item.score}}</view>
 </view>
 
-<view class="content">
+<view class="introduction" wx:if="{{shop.introduction}}">
   <text>{{shop.introduction}}</text>
 </view>
 
-<view class="comments">
+<view class="comments" wx:if="{{shop.comments.length}}">
   <view class="item" wx:for="{{shop.comments}}" wx:key="*this">
     <text class="name">{{item.name}}</text>
     <text class="date">{{item.date}}</text>
-    <text class="content">{{item.content}}</text>
     <text class="rating">{{item.rating}}</text>
+    <text class="content">{{item.content}}</text>
     <view class="images">
       <image wx:for="{{item.images}}" wx:key="*this" src="{{utils.size(item)}}"/>
     </view>
