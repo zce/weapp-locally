@@ -1,5 +1,5 @@
 App({
   config: {
-    apiBase: 'https://locally.uieee.com'
+    apiBase: 'https://locally-server.zce.now.sh'
   }
 })
