@@ -12,6 +12,27 @@ https://github.com/zce/weapp-locally
 ![message](https://user-images.githubusercontent.com/6166576/30124049-98923526-9366-11e7-9da8-c1c4734339fc.jpg)
 ![profile](https://user-images.githubusercontent.com/6166576/30124057-9a6285e0-9366-11e7-973c-7014f363b690.jpg)
 
+## Related
+
+- [zce/weapp-todos](https://github.com/zce/weapp-todos) - 一个简单的任务清单小程序
+- [zce/weapp-douban](https://github.com/zce/weapp-douban) - 微信小程序开发示例（豆瓣电影）
+- [zce/weapp-demo](https://github.com/zce/weapp-demo) - 包含开发工作流版本的豆瓣电影
+- [zce/weapp-beauty](https://github.com/zce/weapp-beauty) - 基于腾讯 AI 的拍照测颜值智能应用
+
+## Contributing
+
+1. **Fork** it on GitHub!
+2. **Clone** the fork to your own machine.
+3. **Checkout** your feature branch: `git checkout -b my-awesome-feature`
+4. **Commit** your changes to your own branch: `git commit -am 'Add some feature'`
+5. **Push** your work back up to your fork: `git push -u origin my-awesome-feature`
+6. Submit a **Pull Request** so that we can review your changes.
+
+> **NOTE**: Be sure to merge the latest from "upstream" before making a pull request!
+
+## License
+
+[MIT](LICENSE) &copy; [汪磊](https://zce.me)
 
 <!--
 other config backup
