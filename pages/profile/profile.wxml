@@ -1,5 +1,6 @@
 <view class="avatar">
-  <image src="/assets/avatar.png" bindtap="loginHandle"></image>
+  <button wx:if="{{userInfo === null}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">微信登录</button>
+  <image wx:else src="{{userInfo.avatarUrl}}"></image>
 </view>
 
 <view class="cells">

@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 400rpx;
-  background-color: #3a4861;
+  background-color: #fff;
 }
 
 .avatar image {
@@ -11,6 +11,9 @@
   height: 220rpx;
   border-radius: 50%;
   box-shadow: 0 0 0 10rpx #777f92;
+}
+.avatar button {
+  width: auto;
 }
 
 .cells {
