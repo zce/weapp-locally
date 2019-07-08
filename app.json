@@ -8,10 +8,10 @@
     "pages/settings/settings"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#3a4861",
-    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
     "navigationBarTitleText": "本地生活",
-    "backgroundColor": "#bcc0c9",
+    "backgroundColor": "#f8f9fb",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false,
     "onReachBottomDistance": 50
@@ -42,5 +42,6 @@
       }
     ],
     "position": "bottom"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
